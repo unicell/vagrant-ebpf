@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # dwarfris not needed with elfutils (>= 0.173)
 llc -march=bpf -mattr=help |& grep dwarfris
 

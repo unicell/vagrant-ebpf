@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
 
   # config.vm.box_check_update = false
-  # config.vbguest.auto_update = false
+  config.vbguest.auto_update = false
 
   config.vm.define "devbox" do |devbox|
       devbox.vm.network "private_network", ip: "192.168.66.101"
@@ -49,5 +49,7 @@ Vagrant.configure("2") do |config|
       end
   end
 
-  config.vm.provision "shell", inline: "echo hello"
+  config.vm.provision "shell", inline: <<-SHELL
+    /vagrant/setup.sh
+  SHELL
 end
