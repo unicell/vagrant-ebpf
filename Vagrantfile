@@ -17,8 +17,8 @@ Vagrant.configure("2") do |config|
   # https://docs.vagrantup.com.
 
   # Every Vagrant development environment requires a box. You can search for
-  # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/bionic64"
+  # boxes at https://app.vagrantup.com/boxes/search
+  config.vm.box = "ubuntu/focal64"
 
   # config.vm.box_check_update = false
   config.vbguest.auto_update = false
@@ -51,5 +51,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
     /vagrant/setup.sh
+    #/vagrant/install-pahole.sh
+    #/vagrant/install-bcc.sh
+    #/vagrant/mount.sh
+    #echo "alias t='sudo /mnt/ebpf/xdp-tutorial/testenv/testenv.sh'" >>/home/vagrant/.bashrc
   SHELL
 end
