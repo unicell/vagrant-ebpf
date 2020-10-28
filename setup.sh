@@ -23,6 +23,8 @@ if [[ $(lsb_release -cs) == "bionic" ]]; then
 fi
 
 # for bpftool
+sudo apt-get install -y linux-tools-$(uname -r)
+# for bpftool build dependency
 sudo apt-get install -y binutils-dev binutils-multiarch-dev libiberty-dev
 
 # for cloudflare/bpftools

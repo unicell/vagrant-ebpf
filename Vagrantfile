@@ -52,7 +52,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     /vagrant/setup.sh
     #/vagrant/install-pahole.sh
-    #/vagrant/install-bcc.sh
     #/vagrant/mount.sh
     #echo "alias t='sudo /mnt/ebpf/xdp-tutorial/testenv/testenv.sh'" >>/home/vagrant/.bashrc
   SHELL
