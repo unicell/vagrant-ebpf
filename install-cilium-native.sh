@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+mkdir -p ~/gocode/src/github.com/cilium
+ln -s /mnt/ebpf/cilium/cilium $(pwd)
+
 make
 sudo env "PATH=$PATH" make install
 
